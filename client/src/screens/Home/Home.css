@@ -1,0 +1,32 @@
+
+
+.home * {
+  box-sizing: border-box;
+}
+.header, .footer {
+  display: flex;
+  height: 12vh;
+}
+
+.left-panel {
+  width: 70vw;
+  border: 1px solid red;
+}
+
+.divider {
+  width: 3vw;
+  border: 1px solid blue;
+}
+
+.right-panel {
+  width: 27vw;
+  border: 1px solid black;
+}
+
+.about-tab, .links-tab, .projects-tab {
+  display: flex;
+}
+
+.links-tab, .about-tab {
+  height: 3vh;
+}

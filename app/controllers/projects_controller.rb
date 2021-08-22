@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :get_project, only: [:show, :update, :destroy, :add_skill_to_project]
+  
   def index 
     projects = Project.all
     render json: projects, include: :skills
