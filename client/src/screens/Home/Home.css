@@ -3,30 +3,210 @@
 .home * {
   box-sizing: border-box;
 }
-.header, .footer {
-  display: flex;
-  height: 12vh;
+
+.tab-button, .close {
+  background: none;
+  border: none;
+  font-size: 1.1em;
 }
 
-.left-panel {
+.close-button-container {
+  display: flex;
+  padding-top: 5%;
+  padding-left: 5%;
+  justify-content: flex-start;
+}
+/* pageState 0 (all tabs closed) */
+
+.header0 {
+  display: flex;
+  height: 57vh;
+}
+
+.footer0 {
+  display: flex;
+  height: 28vh;
+}
+
+.left-panel0 {
   width: 70vw;
   border: 1px solid red;
 }
 
-.divider {
+.name0 {
+  padding: 20% 5% 10% 20%;
+}
+
+.name1, .name2, .name3 {
+  display: none;
+}
+
+
+.divider0 {
   width: 3vw;
   border: 1px solid blue;
 }
 
-.right-panel {
+.right-panel0 {
   width: 27vw;
   border: 1px solid black;
 }
 
 .about-tab, .links-tab, .projects-tab {
   display: flex;
+  height: 5vh;
 }
 
-.links-tab, .about-tab {
-  height: 3vh;
+.projects-tab .divider {
+  background-color: red;
+  opacity: .75;
+}
+.about-tab .divider {
+  background-color: yellow;
+  opacity: .75;
+}
+
+.links-tab .divider {
+  background-color: blue;
+  opacity: .75;
+}
+/* pageState 1 (projects display open) */
+
+.projects-open {
+  display: flex;
+}
+
+.projects-open .divider {
+  background-color: red;
+  opacity: .5;
+}
+.header1, .footer1 {
+  display: flex;
+  height: 10vh;
+}
+
+.left-panel1 {
+  width: 70vw;
+  border: 1px solid red;
+}
+
+.divider1 {
+  width: 3vw;
+  border: 1px solid blue;
+}
+
+.right-panel1 {
+  width: 27vw;
+  border: 1px solid black;
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  padding: 20% 10%;
+  align-items: flex-start;
+}
+
+.projects-list button {
+  margin: 10% 0;
+  background: none;
+  border: none;
+}
+/* pageState 2 (about display open) */
+
+.about-open {
+  display: flex;
+  height: 70vh;
+}
+.about-open .divider {
+  background-color: yellow;
+  opacity: .5;
+}
+.left-panel-about {
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  padding-top: 8vh;
+  align-items: center;
+}
+
+.right-panel-about {
+  display: flex;
+  flex-direction: column;
+}
+
+.header2, .footer2 {
+  display: flex;
+  height: 10vh;
+}
+
+
+.left-panel2 {
+  width: 40vw;
+  border: 1px solid red;
+}
+
+.divider2 {
+  width: 3vw;
+  border: 1px solid blue;
+}
+
+.right-panel2 {
+  width: 57vw;
+  border: 1px solid black;
+}
+
+#profile-pic {
+  width: 25vw;
+}
+
+/* pageState 3 (links display open) */
+
+.links-open {
+  display: flex;
+  height: 70vh;
+}
+
+.links-open .divider {
+  background-color: blue;
+  opacity: .5;
+}
+.left-panel-links {
+  width: 25vw;
+  padding: 5vh 8vw;
+
+}
+.links-list-container {
+  padding: 12% 10%;
+  width: 72vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.links-list {
+  display: flex;
+  margin: 10vh 5vw;
+}
+
+.links-list a {
+  margin: 10px;
+}
+.header3, .footer3 {
+  display: flex;
+  height: 10vh;
+}
+
+.left-panel3 {
+  width: 25vw;
+  border: 1px solid red;
+}
+
+.divider3 {
+  width: 3vw;
+  border: 1px solid blue;
+}
+
+.right-panel3 {
+  width: 72vw;
+  border: 1px solid black;
 }
