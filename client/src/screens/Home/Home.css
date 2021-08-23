@@ -182,12 +182,12 @@
 
 /* pageState 3 (links display open) */
 
-.links-open {
+/* .links-open {
   display: flex;
   height: 70vh;
-}
+} */
 
-.links-open .divider {
+/* .links-open .divider {
   background-color: blue;
   opacity: .5;
 }
@@ -210,7 +210,7 @@
 
 .links-list a {
   margin: 10px;
-}
+} */
 .header3, .footer3 {
   display: flex;
   height: 10vh;

@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react"
 import Projects from "../../components/Projects/Projects"
 import About from "../../components/About/About.jsx"
+import Contact from "../../components/Contact/Contact.jsx"
 import "./Home.css"
 
 function Home() {
   const [pageState, setPageState] = useState(0)
   // 4 page states: all tabs closed; one tab open state for each tab
-  const closeTabs = () => {
-    setPageState(0)
-  }
+  // const closeTabs = () => {
+  //   setPageState(0)
+  // }
   const projectsClick = () => {
     setPageState(1)
   }
@@ -77,26 +78,26 @@ function Home() {
     </div>
   )
 
-  const linksDisplay = (
-    <div className="links-open">
-      <div className="left-panel-links">
-        <h3>let's work together!</h3>
-      </div>
-      <div className={`divider${pageState} divider`}></div>
-      <div className="right-panel-links">
-        <div className="close-button-container">
-          <button className="close" onClick={closeTabs}>x</button>
-        </div>
-        <div className="links-list-container">
-          <div className="links-list">
-            <a href="https://www.linkedin.com/in/nicholas-rynearson-88a77635/">LinkedIn</a>
-            <a href="https://github.com/flexibleidealist">GitHub</a>
-            <a href="mailto:nrynearson@gmail.com">e-mail</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
+  // const linksDisplay = (
+  //   <div className="links-open">
+  //     <div className="left-panel-links">
+  //       <h3>let's work together!</h3>
+  //     </div>
+  //     <div className={`divider${pageState} divider`}></div>
+  //     <div className="right-panel-links">
+  //       <div className="close-button-container">
+  //         <button className="close" onClick={closeTabs}>x</button>
+  //       </div>
+  //       <div className="links-list-container">
+  //         <div className="links-list">
+  //           <a href="https://www.linkedin.com/in/nicholas-rynearson-88a77635/">LinkedIn</a>
+  //           <a href="https://github.com/flexibleidealist">GitHub</a>
+  //           <a href="mailto:nrynearson@gmail.com">e-mail</a>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   </div>
+  // )
 
   const linksTabClosed = (
     <div className="links-tab">
@@ -123,7 +124,7 @@ function Home() {
       </header>
       { pageState === 1 ? <Projects setPageState={setPageState}/> : projectsTabClosed }
       { pageState === 2 ? <About setPageState={setPageState}/> : aboutTabClosed }
-      { pageState === 3 ? linksDisplay : linksTabClosed }
+      { pageState === 3 ? <Contact setPageState={setPageState}/> : linksTabClosed }
       <footer className={`footer${pageState}`}>
         <div className={`left-panel${pageState}`}></div>
         <div className={`divider${pageState}`}></div>

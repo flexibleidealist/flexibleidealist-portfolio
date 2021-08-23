@@ -1,0 +1,29 @@
+.contact {
+  display: flex;
+  width: 100vw;
+  height: 70vh;
+}
+
+.left-panel-contact {
+  width: 25vw;
+  padding: 4% 2%;
+}
+
+.contact .divider {
+  width: 3vw;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.list-container {
+  width: 57vw;
+  padding: 15% 5%;
+}
+
+.list-container a {
+  margin: 15px;
+}
+
+.close-button-container {
+  width: 10vw;
+}

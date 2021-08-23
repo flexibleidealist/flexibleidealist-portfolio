@@ -24,23 +24,23 @@ function Projects(props) {
   return(
     <div className={closed ? "closed": "projects"}>
       <div className="projects-previews">
-      {
-      projects?.map(project => (
-        <Project className="project-card" key={project.id} project={project} />
-        ))
-      }
+        {
+        projects?.map(project => (
+          <Project className="project-card" key={project.id} project={project} />
+          ))
+        }
       </div>
       <div className="projects-divider"></div>
       <div className="right-side">
-        <div className="button-container">
-          <button className="close-button" onClick={closeProjects}>x</button>
-        </div>
         <div className="projects-list">
           <button>NYC Beach App</button>
           <button>tiny library</button>
           <button>B-Side Collective</button>
           <button>ArtSpace</button>
         </div>
+      </div>
+      <div className="button-container">
+        <button className="close" onClick={closeProjects}>close</button>
       </div>
     </div>
   )
