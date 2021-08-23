@@ -1,4 +1,13 @@
+body * {
+  box-sizing: border-box;
+}
+
 body a {
 text-decoration: none;
 color: inherit;
+}
+
+.header2, .footer2 {
+  display: flex;
+  height: 10vh;
 }

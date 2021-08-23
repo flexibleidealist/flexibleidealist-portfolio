@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import Projects from "../../components/Projects/Projects"
+import About from "../../components/About/About.jsx"
 import "./Home.css"
 
 function Home() {
@@ -19,26 +20,26 @@ function Home() {
   const linksClick = () => {
     setPageState(3)
   }
-
-  const projectsDisplay = (
-    <div className="projects-open">
-        <div className="left-panel">
-          <Projects />
-        </div>
-        <div className={`divider${pageState} divider`}></div>
-        <div className={`right-panel${pageState}`}>
-          <div className="close-button-container">
-            <button className="close" onClick={closeTabs}>x</button>
-          </div>
-          <div className="projects-list">
-            <button className="p1">NYC Beach App</button>
-            <button className="p2">tiny library</button>
-            <button className="p3">B-Side Collective</button>
-            <button className="p4">ArtSpace</button>
-          </div>
-        </div>
-      </div>
-  )
+  //when everything is working, delete all this:
+  // const projectsDisplay = (
+  //   <div className="projects-open">
+  //       <div className="left-panel">
+  //         <Projects />
+  //       </div>
+  //       <div className={`divider${pageState} divider`}></div>
+  //       <div className={`right-panel${pageState}`}>
+  //         <div className="close-button-container">
+  //           <button className="close" onClick={closeTabs}>x</button>
+  //         </div>
+  //         <div className="projects-list">
+  //           <button className="p1">NYC Beach App</button>
+  //           <button className="p2">tiny library</button>
+  //           <button className="p3">B-Side Collective</button>
+  //           <button className="p4">ArtSpace</button>
+  //         </div>
+  //       </div>
+  //     </div>
+  // )
 
   const projectsTabClosed = (
     <div className="projects-tab">
@@ -50,21 +51,21 @@ function Home() {
       </div>
   )
 
-  const aboutDisplay = (
-    <div className="about-open">
-        <div className="left-panel-about">
-          <img id="profile-pic" src="https://i.imgur.com/kHvKSSc.jpg" alt="profile pic" />
-        </div>
-        <div className={`divider${pageState} divider`}></div>
-        <div className="right-panel-about">
-          <div className="close-button-container">
-            <button className="close" onClick={closeTabs}>x</button>
-          </div>
-          <p className="about-me">I'm a software engineer.</p>
-          <a href="/assets/dummy-resume.pdf" download>download my resume</a>
-        </div>
-      </div>
-  )
+  // const aboutDisplay = (
+  //   <div className="about-open">
+  //       <div className="left-panel-about">
+  //         <img id="profile-pic" src="https://i.imgur.com/kHvKSSc.jpg" alt="profile pic" />
+  //       </div>
+  //       <div className={`divider${pageState} divider`}></div>
+  //       <div className="right-panel-about">
+  //         <div className="close-button-container">
+  //           <button className="close" onClick={closeTabs}>x</button>
+  //         </div>
+  //         <p className="about-me">I'm a software engineer.</p>
+  //         <a href="/assets/dummy-resume.pdf" download>download my resume</a>
+  //       </div>
+  //     </div>
+  // )
 
   const aboutTabClosed = (
     <div className="about-tab">
@@ -102,7 +103,7 @@ function Home() {
       <div className={`left-panel${pageState}`}></div>
       <div className={`divider${pageState} divider`}></div>
       <div className={`right-panel${pageState}`}>
-        <button className="tab-button" onClick={linksClick}>links</button>
+        <button className="tab-button" onClick={linksClick}>contact</button>
       </div>
     </div>
   )
@@ -120,8 +121,8 @@ function Home() {
         <div className={`divider${pageState}`}></div>
         <div className={`right-panel${pageState}`}></div>
       </header>
-      { pageState === 1 ? projectsDisplay : projectsTabClosed }
-      { pageState === 2 ? aboutDisplay : aboutTabClosed }
+      { pageState === 1 ? <Projects setPageState={setPageState}/> : projectsTabClosed }
+      { pageState === 2 ? <About setPageState={setPageState}/> : aboutTabClosed }
       { pageState === 3 ? linksDisplay : linksTabClosed }
       <footer className={`footer${pageState}`}>
         <div className={`left-panel${pageState}`}></div>

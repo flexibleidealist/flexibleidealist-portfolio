@@ -1,6 +1,56 @@
+.closed {
+  animation: shrink-projects;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes shrink-projects {
+  0% {height: 70vh; opacity: 1}
+  100% {height: 5vh; opacity: 0}
+}
 .projects {
+  display: flex;
   height: 70vh;
+  animation: grow-projects;
+  animation-duration: 1s;
+}
+
+@keyframes grow-projects {
+  0% {height: 5vh}
+  0% {height: 70vh}
+}
+
+.projects-previews {
+  height: 70vh;
+  width: 70vw;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+}
+.project-card {
+  scroll-snap-align: start;
+  height: 70vh;
+  opacity: 0;
+  animation: fade-in;
+  animation-delay: 2s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+/* .project-card * {
+  
+} */
+
+@keyframes fade-in {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+
+
+.projects-divider {
+  height: 70vh;
+  width: 3vw;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
 }
