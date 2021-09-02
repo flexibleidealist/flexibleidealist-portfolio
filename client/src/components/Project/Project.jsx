@@ -7,8 +7,8 @@ function Project(props) {
       <img className="project-image" src={project.image_url} alt={project.title} />
       <p className="description">{project.description}</p>
       <div className="project-links">
-        <a href={project.deployed_url} target="_blank" className="deployed">See the App</a>
-        <a href={project.repo_url}  target="_blank" className="repo">See the Code</a>
+        <button><a href={project.deployed_url} target="_blank" className="deployed">See the App</a></button>
+        <button><a href={project.repo_url}  target="_blank" className="repo">See the Code</a></button>
       </div>
     </div>
   )

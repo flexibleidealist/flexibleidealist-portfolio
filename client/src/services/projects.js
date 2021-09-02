@@ -9,6 +9,16 @@ export const getProjects = async () => {
   }
 }
 
+export const getProject = async (id) => {
+  try {
+    const res = await api.get(`/projects/${id}`)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+
+}
+
 export const addProject = async (projectData) => {
   try {
     const res = await api.post("/projects", {project: projectData})
