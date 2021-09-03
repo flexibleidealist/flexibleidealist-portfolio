@@ -5,6 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Skill.destroy_all
+Project.destroy_all
+Admin.destroy_all
+
 nicholas = Admin.create!(username: "flexibleidealist", password: "257699141bk")
 
 pp "created #{Admin.count} admins!"
@@ -34,7 +39,7 @@ heroku = Skill.create!(name: "Heroku", icon: "/assets/icons/skills/heroku.svg", 
 
 
 
-pp "create #{Skill.count} skills!"
+pp "created #{Skill.count} skills!"
 
 p1.skills.push(html, css, js, nodejs)
 p2.skills.push(html, css, js, nodejs, react)
