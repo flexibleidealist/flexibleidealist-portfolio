@@ -1,45 +1,47 @@
-import { useState, useEffect } from "react"
-import { getProjects } from "../../services/projects"
-import Project from "../../components/Project/Project"
-import "./Projects.css"
+import { useState, useEffect } from 'react';
+import { getProjects } from '../../services/projects';
+import Project from '../../components/Project/Project';
+import './Projects.css';
 
 function Projects() {
-  const [projects, setProjects] = useState([])
+  const [projects, setProjects] = useState([]);
   const scrollOff = () => {
-    document.body.classList.add("noscroll")
-  }
+    document.body.classList.add('noscroll');
+  };
   const scrollOn = () => {
-    document.body.classList.remove("noscroll")
-  }
+    document.body.classList.remove('noscroll');
+  };
 
-    
   useEffect(() => {
     const fetchProjects = async () => {
-      const allProjects = await getProjects()
-      setProjects(allProjects)
-    }
-      fetchProjects()
-  }, [])
-  return(
+      const allProjects = await getProjects();
+      setProjects(allProjects);
+    };
+    fetchProjects();
+  }, []);
+  return (
     <div className="projects">
       <h2 id="projects-header">recent projects</h2>
-      <div onMouseEnter={scrollOff} onMouseLeave={scrollOn} className="projects-window" id="projects-window">
-        {
-        projects?.map(project => (
-          <Project className="project-card" key={project.id} id={project.id} project={project} />
-          ))
-        }
+      <div
+        onMouseEnter={scrollOff}
+        onMouseLeave={scrollOn}
+        className="projects-window"
+        id="projects-window"
+      >
+        {projects?.map(project => (
+          <Project
+            className="project-card"
+            key={project.id}
+            id={project.id}
+            project={project}
+          />
+        ))}
       </div>
-      {/* <div className="projects-list">
-        <button>NYC Beach App</button>
-        <button><a target={projectsWindow} href="#1">tiny library</a></button>
-        <button>B-Side Collective</button>
-        <button>ArtSpace</button>
-      </div> */}
-      <button className="top-button"><a href="#home-header">top</a></button>
-
+      <button className="top-button">
+        <a href="#home-header">top</a>
+      </button>
     </div>
-  )
+  );
 }
 
-export default Projects
+export default Projects;
